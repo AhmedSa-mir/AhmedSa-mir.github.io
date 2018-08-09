@@ -1,4 +1,4 @@
-Being interested in distributed systems, I was interested in working on that project. The project is about adding all-to-all communications to HPX library. It was a tough project. It was a very good experience but it could have been better. Anyway, let's have a look on my contribution in HPX library with Ste||ar Group in GSoC 2018.
+Being interested in distributed systems, I was interested in working on that project. The project is about adding all-to-all communications to HPX library. It was a tough project. It was a very good experience but it could have been better. Anyway, let's have a look on my contribution in HPX library with Ste\|\|ar Group in GSoC 2018.
 
 ## Main Goal of the project
 
