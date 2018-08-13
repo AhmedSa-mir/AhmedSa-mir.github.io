@@ -1,12 +1,12 @@
-Being interested in distributed systems, I was interested in working on that project. The project is about adding all-to-all communications to HPX library. It was a tough project. It was a very good experience but it could have been better. Anyway, let's have a look on my contribution in HPX library with Ste\|\|ar Group in GSoC 2018.
+Being interested in distributed systems, I was interested in working on that project. The project is about adding all-to-all communications to HPX library. It was a tough project. It was a very good experience but it could have been much better. Anyway, let's have a look on my contribution in HPX library with Ste\|\|ar Group in GSoC 2018.
 
 ## Main Goal of the project
 
-Building a libfabric backend with the model proposed by the FFLIB library <sup>[1]</sup>. Afterthat, that backend layer would be integrated with the libfabric parcelport layer developed in HPX <sup>[5]</sup> to introduce collectives communications to HPX.
+Building a libfabric backend with the model proposed by the [FFLIB](https://spcl.inf.ethz.ch/Research/Parallel_Programming/FFlib/) library. Afterthat, that backend layer would be integrated with the libfabric parcelport layer developed in [HPX](https://github.com/STEllAR-GROUP/hpx/tree/master/plugins/parcelport/libfabric) to introduce collectives communications to HPX.
 
 ## Starting with FFLIB library
 
-My first task was to understand the FFLIB1 <sup>[1]</sup> code. That version was developed to demonstrate the FFLIB model on Portals4 layer. So my goal was to understand the code to get the idea how to tweak that to work on libfabric instead of Portals4. I had to go into the [documentation of Portals4](http://www.cs.sandia.gov/Portals/portals40.pdf) to understand its structure and APIs. It took me several weeks to understand the FFLIB1 code and the Portals4 APIs used in the code. The FFLIB had no documentation so it was a difficult initial task. Afterthat, we made a call with Salvatore (the author of FFLIB) and decided that we should go with FFLIB2 <sup>[2]</sup>. That version was in a very early state it had a small structure and can do send/recv functionalities. It was working on MPI. We decided to build a libfabric component in that version as it would be easier than tweaking the first version.
+My first task was to understand the [FFLIB1](https://spcl.inf.ethz.ch/Research/Parallel_Programming/FFlib/) code. That version was developed to demonstrate the FFLIB model on Portals4 layer. So my goal was to understand the code to get the idea how to tweak that to work on libfabric instead of Portals4. I had to go into the [documentation of Portals4](http://www.cs.sandia.gov/Portals/portals40.pdf) to understand its structure and APIs. It took me two/three weeks to understand the FFLIB1 code and the Portals4 APIs used in the code. The FFLIB1 code had no documentation so it was a difficult initial task. Afterthat, we made a call with Salvatore (the author of FFLIB) and decided that we should go with [FFLIB2](https://github.com/SalvatoreDiGirolamo/fflib2). That version was in a very early state. It had a small structure and can do send/recv functionalities. It was working on MPI. We decided to build a libfabric component in that version as it would be easier than tweaking the first version.
 
 ## Building a simple libfabric test
 
@@ -32,7 +32,7 @@ Finally I managed to build a FFLIB test working on libfabric. After the build pr
 
 At that point we have a FFLIB test working on libfabric. It's a simple test but it's a basic start for more complex implementations.
 
-Then we had to decide in which track we should continue. We had two options: Integrating that simple test with the HPX parcelport code <sup>[5]</sup> or implementing more complex collective communications tests in the FFLIB libfabric backend. We chose to integrate that simple test first with the parcelport.
+Then we had to decide in which track we should continue. We had two options: Integrating that simple test with the [HPX parcelport](https://github.com/STEllAR-GROUP/hpx/tree/master/plugins/parcelport/libfabric) code or implementing more complex collective communications tests in the FFLIB libfabric backend. We chose to integrate that simple test first with the parcelport.
 
 Unfortunately, the parcelport code also had no documentation. John helped me to get started with the code but it was too difficult to understand. It had many terminologies that were very confusing. I spent two weeks trying to figure out how should I modify the code to integrate the FFLIB stuff with it. But I got stuck many many times. I had calls with John but it didn't help me much because the code needed documentation. It was impossible for me to understand it without a good documentation.
 
@@ -44,7 +44,7 @@ Afterthat I started building an all-reduce test. The all-reduce algorithm was im
 
 ## Conclusion
 
-What I've done <sup>[3]</sup>:
+What I've done in my [FFLIB2 fork](https://github.com/AhmedSa-mir/fflib2/tree/hpx-libfabric):
 - Implementing a libfabric component in the FFLIB library.
 - Building 3 tests working on 2 nodes:
   - send/recv test
@@ -61,7 +61,7 @@ What's left:
 
 ## Final Words
 
-At the end I can say that it was a tough project. It needed to be more organized. I spent many weeks with tasks that we didn't benefit from. The Lack of documentations was also a big issue. I haven't seen a documentation of any of the codebases I have worked with throughout the project. That was very annoying and took me a lot of time to overcome.
+At the end I can say that it was not a simple project. It needed to be more organized. I spent many weeks with tasks that we didn't benefit from. The Lack of documentations was also a big issue. I haven't seen a documentation of any of the codebases I have worked with throughout the project. That was very annoying and took me a lot of time to overcome.
 
 My learning experience wasn't as expected due to the problems I've mentioned but I got some knowledge. I've read some papers and dealt with different layers and that was interesting. I've implemented a small backend layer that should be used to integrate the FFLIB stuff with HPX parcelport. It wasn't that big but it was a good experience to get into these problems.
 
