@@ -61,7 +61,7 @@ What's left:
 
 ## Final Words
 
-At the end I can say that it was not a simple project. It needed to be more organized. I spent many weeks with tasks that we didn't benefit from. The Lack of documentations was also a big issue. I haven't seen a documentation of any of the codebases I have worked with throughout the project. That was very annoying and took me a lot of time to overcome.
+At the end I can say that it was not a simple project. It needed to be more organized. I spent many weeks with tasks that we didn't benefit from. The lack of documentations was also a big issue. I haven't seen a documentation of any of the codebases I have worked with throughout the project. That was very annoying and took me a lot of time to overcome.
 
 My learning experience wasn't as expected due to the problems I've mentioned but I got some knowledge. I've read some papers and dealt with different layers and that was interesting. I've implemented a small backend layer that should be used to integrate the FFLIB stuff with HPX parcelport. It wasn't that big but it was a good experience to get into these problems.
 
